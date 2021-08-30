@@ -295,9 +295,9 @@ dependencies = [
 
 [[package]]
 name = "pyo3-build-config"
-version = "0.14.1"
+version = "0.14.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dcb2e98cc9ccc83d4f7115c8f925e0057e88c8d324b1bc4c2db4a7270c06ac9d"
+checksum = "650911ce22a793e9af67a0a880741ab1519e4f84740642716cbe83e129d17a2e"
 dependencies = [
  "once_cell",
 ]
