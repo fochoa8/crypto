@@ -16,9 +16,9 @@ checksum = "250f629c0161ad8107cf89319e990051fae62832fd343083bea452d93e2205fd"
 
 [[package]]
 name = "asn1"
-version = "0.6.0"
+version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9680a48fea09cb1af33dc233179b9723674ca43ad9e5c9d01ab6ad1c3c58c0dc"
+checksum = "a6314055d358206c999b47dfc7a800aefb9688c7e8a1b54d7aeedd92bfae9f73"
 dependencies = [
  "asn1_derive",
  "chrono",
@@ -26,9 +26,9 @@ dependencies = [
 
 [[package]]
 name = "asn1_derive"
-version = "0.6.0"
+version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f828598cd99548327735aae5db2852e3d78d1508ed81543f204b8ca3cf3ba859"
+checksum = "c932ab24fbfe36ec562ca22c1d6e1683046906cb46d20859ba8112de577c0758"
 dependencies = [
  "proc-macro2",
  "quote",
