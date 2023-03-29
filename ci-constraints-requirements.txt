@@ -145,7 +145,7 @@ pytest-subtests==0.10.0; python_version >= "3.7"
     # via cryptography (setup.cfg)
 pytest-xdist==3.2.0; python_version >= "3.7"
     # via cryptography (setup.cfg)
-pytz==2022.7.1
+pytz==2023.3
     # via
     #   babel
     #   cryptography (setup.cfg)
