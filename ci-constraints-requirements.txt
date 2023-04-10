@@ -115,7 +115,7 @@ pyenchant==3.2.2
     # via
     #   cryptography (setup.cfg)
     #   sphinxcontrib-spelling
-pygments==2.14.0
+pygments==2.15.0
     # via
     #   readme-renderer
     #   rich
