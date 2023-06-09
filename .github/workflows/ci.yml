@@ -47,7 +47,7 @@ jobs:
           - {VERSION: "3.11", NOXSESSION: "tests", OPENSSL: {TYPE: "openssl", VERSION: "56547da9d3fa24f54b439497d322b12beb004c80"}}
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -157,7 +157,7 @@ jobs:
           sed -i "s:ID=alpine:ID=NotpineForGHA:" /etc/os-release
         if: matrix.IMAGE.IMAGE == 'alpine:aarch64'
 
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -209,7 +209,7 @@ jobs:
     name: "${{ matrix.PYTHON }} with Rust ${{ matrix.RUST }}"
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -256,7 +256,7 @@ jobs:
     name: "Rust Coverage"
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -360,7 +360,7 @@ jobs:
             RUNNER: {OS: [self-hosted, macos, ARM64, tart], ARCH: 'arm64'}
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -424,7 +424,7 @@ jobs:
           - {VERSION: "3.11", NOXSESSION: "tests"}
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -497,7 +497,7 @@ jobs:
     name: "Downstream tests for ${{ matrix.DOWNSTREAM }}"
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -540,7 +540,7 @@ jobs:
     needs: [linux, distros, linux-rust, linux-rust-coverage, macos, windows, linux-downstream]
     if: ${{ always() }}
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v3.5.3
         timeout-minutes: 3
         with:
           persist-credentials: false
