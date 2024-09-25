@@ -223,7 +223,7 @@ jobs:
         uses: actions/setup-python@v4.6.0
         with:
           python-version: ${{ matrix.PYTHON }}
-      - uses: dtolnay/rust-toolchain@52e69531e6f69a396bc9d1226284493a5db969ff
+      - uses: dtolnay/rust-toolchain@7b1c307e0dcbda6122208f10795a713336a9b35a
         with:
           toolchain: ${{ matrix.RUST }}
       - name: Clone wycheproof
@@ -263,7 +263,7 @@ jobs:
           fetch-depth: 0
       - name: set mtimes for rust dirs
         uses: ./.github/actions/mtime-fix
-      - uses: dtolnay/rust-toolchain@52e69531e6f69a396bc9d1226284493a5db969ff
+      - uses: dtolnay/rust-toolchain@7b1c307e0dcbda6122208f10795a713336a9b35a
         id: rust-toolchain
         with:
           toolchain: ${{ matrix.RUST }}
