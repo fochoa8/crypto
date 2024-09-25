@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     name: sdists
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         with:
           # The tag to build or the tag received by the tag event
           ref: ${{ github.event.inputs.version || github.ref }}
@@ -40,11 +40,11 @@ jobs:
         run: .venv/bin/python -m build --sdist
       - name: Make sdist and wheel (vectors)
         run: cd vectors/ && ../.venv/bin/python -m build
-      - uses: actions/upload-artifact@v3.1.2
+      - uses: actions/upload-artifact@v4.4.0
         with:
           name: "cryptography-sdist"
           path: dist/cryptography*
-      - uses: actions/upload-artifact@v3.1.2
+      - uses: actions/upload-artifact@v4.4.0
         with:
           name: "vectors-sdist-wheel"
           path: vectors/dist/cryptography*
@@ -131,7 +131,7 @@ jobs:
           .venv/bin/python -c "from cryptography.hazmat.backends.openssl.backend import backend;print('Loaded: ' + backend.openssl_version_text());print('Linked Against: ' + backend._ffi.string(backend._lib.OPENSSL_VERSION_TEXT).decode('ascii'))"
       - run: mkdir cryptography-wheelhouse
       - run: mv wheelhouse/cryptography*.whl cryptography-wheelhouse/
-      - uses: actions/upload-artifact@v3.1.2
+      - uses: actions/upload-artifact@v4.4.0
         with:
           name: "cryptography-${{ github.event.inputs.version }}-${{ matrix.MANYLINUX.NAME }}-${{ matrix.PYTHON.VERSION }}"
           path: cryptography-wheelhouse/
@@ -189,7 +189,7 @@ jobs:
           PYTHON_DOWNLOAD_URL: ${{ matrix.PYTHON.DOWNLOAD_URL }}
         if: contains(matrix.PYTHON.VERSION, 'pypy') == false
       - name: Setup pypy
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: ${{ matrix.PYTHON.VERSION }}
         if: contains(matrix.PYTHON.VERSION, 'pypy')
@@ -202,7 +202,7 @@ jobs:
           name: openssl-macos-universal2
           path: "../openssl-macos-universal2/"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: dtolnay/rust-toolchain@52e69531e6f69a396bc9d1226284493a5db969ff
+      - uses: dtolnay/rust-toolchain@7b1c307e0dcbda6122208f10795a713336a9b35a
         with:
           toolchain: stable
           # Add the arm64 target in addition to the native arch (x86_64)
@@ -235,7 +235,7 @@ jobs:
       - run: mv wheelhouse/cryptography*.whl cryptography-wheelhouse/
       - run: |
           echo "CRYPTOGRAPHY_WHEEL_NAME=$(basename $(ls cryptography-wheelhouse/cryptography*.whl))" >> $GITHUB_ENV
-      - uses: actions/upload-artifact@v3.1.2
+      - uses: actions/upload-artifact@v4.4.0
         with:
           name: "${{ env.CRYPTOGRAPHY_WHEEL_NAME }}"
           path: cryptography-wheelhouse/
@@ -266,11 +266,11 @@ jobs:
           name: cryptography-sdist
 
       - name: Setup python
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: ${{ matrix.PYTHON.VERSION }}
           architecture: ${{ matrix.WINDOWS.ARCH }}
-      - uses: dtolnay/rust-toolchain@52e69531e6f69a396bc9d1226284493a5db969ff
+      - uses: dtolnay/rust-toolchain@7b1c307e0dcbda6122208f10795a713336a9b35a
         with:
           toolchain: stable
           target: ${{ matrix.WINDOWS.RUST_TRIPLE }}
@@ -307,7 +307,7 @@ jobs:
 
       - run: mkdir cryptography-wheelhouse
       - run: move wheelhouse\cryptography*.whl cryptography-wheelhouse\
-      - uses: actions/upload-artifact@v3.1.2
+      - uses: actions/upload-artifact@v4.4.0
         with:
           name: "cryptography-${{ github.event.inputs.version }}-${{ matrix.WINDOWS.WINDOWS }}-${{ matrix.PYTHON.VERSION }}-${{ matrix.PYTHON.ABI_VERSION}}"
           path: cryptography-wheelhouse\
