@@ -108,7 +108,7 @@ pygments==2.18.0
     #   readme-renderer
     #   rich
     #   sphinx
-pyproject-hooks==1.0.0
+pyproject-hooks==1.1.0
     # via build
 pytest==7.4.0
     # via
