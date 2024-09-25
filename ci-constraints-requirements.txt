@@ -5,76 +5,76 @@
 # and then manually massaged to add version specifiers to packages whose
 # versions vary by Python version
 
-alabaster==0.7.13
+alabaster==1.0.0
     # via sphinx
-argcomplete==3.0.8
+argcomplete==3.5.0
     # via nox
-babel==2.12.1
+babel==2.16.0
     # via sphinx
-black==23.3.0
+black==24.8.0
     # via cryptography (pyproject.toml)
-bleach==6.0.0
+bleach==6.1.0
     # via readme-renderer
-build==0.10.0
+build==1.2.2
     # via
     #   check-sdist
     #   cryptography (pyproject.toml)
-certifi==2022.12.7
+certifi==2024.8.30
     # via requests
-charset-normalizer==3.1.0
+charset-normalizer==3.3.2
     # via requests
-check-sdist==0.1.2
+check-sdist==0.1.3
     # via cryptography (pyproject.toml)
 click==8.1.3
     # via black
-colorlog==6.7.0
+colorlog==6.8.2
     # via nox
-coverage==7.2.5
+coverage==7.6.1
     # via pytest-cov
-distlib==0.3.6
+distlib==0.3.8
     # via virtualenv
-docutils==0.18.1
+docutils==0.21.2
     # via
     #   readme-renderer
     #   sphinx
     #   sphinx-rtd-theme
 exceptiongroup==1.1.1
     # via pytest
-execnet==1.9.0
+execnet==2.1.1
     # via pytest-xdist
-filelock==3.12.0
+filelock==3.16.1
     # via virtualenv
-idna==3.4
+idna==3.10
     # via requests
 imagesize==1.4.1
     # via sphinx
-importlib-metadata==6.6.0
+importlib-metadata==6.8.0
     # via
     #   keyring
     #   twine
 iniconfig==2.0.0
     # via pytest
-jaraco-classes==3.2.3
+jaraco-classes==3.4.0
     # via keyring
-jinja2==3.1.2
+jinja2==3.1.4
     # via sphinx
-keyring==23.13.1
+keyring==25.4.1
     # via twine
 markdown-it-py==2.2.0
     # via rich
-markupsafe==2.1.2
+markupsafe==2.1.5
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-more-itertools==9.1.0
+more-itertools==10.5.0
     # via jaraco-classes
-mypy==1.2.0
+mypy==1.11.2
     # via cryptography (pyproject.toml)
 mypy-extensions==1.0.0
     # via
     #   black
     #   mypy
-nox==2023.4.22
+nox==2024.4.15
     # via cryptography (pyproject.toml)
 packaging==23.1
     # via
@@ -83,17 +83,17 @@ packaging==23.1
     #   nox
     #   pytest
     #   sphinx
-pathspec==0.11.1
+pathspec==0.12.1
     # via
     #   black
     #   check-sdist
-pkginfo==1.9.6
+pkginfo==1.11.1
     # via twine
-platformdirs==3.5.0
+platformdirs==4.3.6
     # via
     #   black
     #   virtualenv
-pluggy==1.0.0
+pluggy==1.5.0
     # via pytest
 pretend==1.0.9
     # via cryptography (pyproject.toml)
@@ -103,14 +103,14 @@ pyenchant==3.2.2
     # via
     #   cryptography (pyproject.toml)
     #   sphinxcontrib-spelling
-pygments==2.15.1
+pygments==2.18.0
     # via
     #   readme-renderer
     #   rich
     #   sphinx
-pyproject-hooks==1.0.0
+pyproject-hooks==1.1.0
     # via build
-pytest==7.3.1
+pytest==8.3.3
     # via
     #   cryptography (pyproject.toml)
     #   pytest-benchmark
@@ -119,15 +119,15 @@ pytest==7.3.1
     #   pytest-xdist
 pytest-benchmark==4.0.0
     # via cryptography (pyproject.toml)
-pytest-cov==4.0.0
+pytest-cov==5.0.0
     # via cryptography (pyproject.toml)
-pytest-randomly==3.12.0
+pytest-randomly==3.15.0
     # via cryptography (pyproject.toml)
-pytest-xdist==3.2.1
+pytest-xdist==3.3.1
     # via cryptography (pyproject.toml)
-readme-renderer==37.3
+readme-renderer==40.0
     # via twine
-requests==2.29.0
+requests==2.32.3
     # via
     #   requests-toolbelt
     #   sphinx
@@ -136,35 +136,35 @@ requests-toolbelt==1.0.0
     # via twine
 rfc3986==2.0.0
     # via twine
-rich==13.3.5
+rich==13.8.1
     # via twine
-ruff==0.0.264
+ruff==0.0.277
     # via cryptography (pyproject.toml)
 six==1.16.0
     # via bleach
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==6.2.1
+sphinx==8.0.2
     # via
     #   cryptography (pyproject.toml)
     #   sphinx-rtd-theme
     #   sphinxcontrib-jquery
     #   sphinxcontrib-spelling
-sphinx-rtd-theme==1.2.0
+sphinx-rtd-theme==2.0.0
     # via cryptography (pyproject.toml)
-sphinxcontrib-applehelp==1.0.4
+sphinxcontrib-applehelp==2.0.0
     # via sphinx
-sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-devhelp==2.0.0
     # via sphinx
-sphinxcontrib-htmlhelp==2.0.1
+sphinxcontrib-htmlhelp==2.1.0
     # via sphinx
 sphinxcontrib-jquery==4.1
     # via sphinx-rtd-theme
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
-sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-qthelp==2.0.0
     # via sphinx
-sphinxcontrib-serializinghtml==1.1.5
+sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
 sphinxcontrib-spelling==8.0.0
     # via cryptography (pyproject.toml)
@@ -177,19 +177,19 @@ tomli==2.0.1
     #   mypy
     #   pyproject-hooks
     #   pytest
-twine==4.0.2
+twine==5.1.1
     # via cryptography (pyproject.toml)
-typing-extensions==4.5.0
+typing-extensions==4.12.2
     # via mypy
-urllib3==1.26.15
+urllib3==2.0.3
     # via
     #   requests
     #   twine
-virtualenv==20.23.0
+virtualenv==20.23.1
     # via nox
 webencodings==0.5.1
     # via bleach
-zipp==3.15.0
+zipp==3.20.2
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
