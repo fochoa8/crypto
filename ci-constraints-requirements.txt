@@ -13,7 +13,7 @@ babel==2.12.1
     # via sphinx
 black==23.3.0
     # via cryptography (pyproject.toml)
-bleach==6.0.0
+bleach==6.1.0
     # via readme-renderer
 build==0.10.0
     # via
