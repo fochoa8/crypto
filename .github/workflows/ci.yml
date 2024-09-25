@@ -47,7 +47,7 @@ jobs:
           - {VERSION: "3.11", NOXSESSION: "tests", OPENSSL: {TYPE: "openssl", VERSION: "56547da9d3fa24f54b439497d322b12beb004c80"}}
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -56,7 +56,7 @@ jobs:
         uses: ./.github/actions/mtime-fix
       - name: Setup python
         id: setup-python
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: ${{ matrix.PYTHON.VERSION }}
       - name: Clone wycheproof
@@ -75,7 +75,7 @@ jobs:
           CONFIG_FLAGS: ${{ matrix.PYTHON.OPENSSL.CONFIG_FLAGS }}
         if: matrix.PYTHON.OPENSSL
       - name: Load OpenSSL cache
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v4.0.2
         id: ossl-cache
         timeout-minutes: 2
         with:
@@ -157,7 +157,7 @@ jobs:
           sed -i "s:ID=alpine:ID=NotpineForGHA:" /etc/os-release
         if: matrix.IMAGE.IMAGE == 'alpine:aarch64'
 
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -209,7 +209,7 @@ jobs:
     name: "${{ matrix.PYTHON }} with Rust ${{ matrix.RUST }}"
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -220,10 +220,10 @@ jobs:
         uses: ./.github/actions/cache
         timeout-minutes: 2
       - name: Setup python
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: ${{ matrix.PYTHON }}
-      - uses: dtolnay/rust-toolchain@52e69531e6f69a396bc9d1226284493a5db969ff
+      - uses: dtolnay/rust-toolchain@7b1c307e0dcbda6122208f10795a713336a9b35a
         with:
           toolchain: ${{ matrix.RUST }}
       - name: Clone wycheproof
@@ -256,14 +256,14 @@ jobs:
     name: "Rust Coverage"
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         timeout-minutes: 3
         with:
           persist-credentials: false
           fetch-depth: 0
       - name: set mtimes for rust dirs
         uses: ./.github/actions/mtime-fix
-      - uses: dtolnay/rust-toolchain@52e69531e6f69a396bc9d1226284493a5db969ff
+      - uses: dtolnay/rust-toolchain@7b1c307e0dcbda6122208f10795a713336a9b35a
         id: rust-toolchain
         with:
           toolchain: ${{ matrix.RUST }}
@@ -295,7 +295,7 @@ jobs:
             ~/.cargo/bin/rust-size
             ~/.cargo/bin/rust-strip
       - name: Setup python
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: ${{ matrix.PYTHON }}
       - run: cargo install cargo-binutils
@@ -360,7 +360,7 @@ jobs:
             RUNNER: {OS: [self-hosted, macos, ARM64, tart], ARCH: 'arm64'}
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -374,7 +374,7 @@ jobs:
           key: ${{ matrix.PYTHON.NOXSESSION }}-${{ matrix.PYTHON.VERSION }}
 
       - name: Setup python
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: ${{ matrix.PYTHON.VERSION }}
           architecture: 'x64' # we force this right now so that it will install the universal2 on arm64
@@ -385,7 +385,7 @@ jobs:
         timeout-minutes: 2
         uses: ./.github/actions/wycheproof
 
-      - uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
+      - uses: dawidd6/action-download-artifact@09f2f74827fd3a8607589e5ad7f9398816f540fe
         with:
           repo: pyca/infra
           workflow: build-macos-openssl.yml
@@ -424,7 +424,7 @@ jobs:
           - {VERSION: "3.11", NOXSESSION: "tests"}
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -433,7 +433,7 @@ jobs:
         uses: ./.github/actions/mtime-fix
       - name: Setup python
         id: setup-python
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: ${{ matrix.PYTHON.VERSION }}
           architecture: ${{ matrix.WINDOWS.ARCH }}
@@ -444,7 +444,7 @@ jobs:
           key: ${{ matrix.PYTHON.NOXSESSION }}-${{ matrix.WINDOWS.ARCH }}-${{ steps.setup-python.outputs.python-version }}
       - run: python -m pip install -c ci-constraints-requirements.txt "nox" coverage[toml]
 
-      - uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
+      - uses: dawidd6/action-download-artifact@09f2f74827fd3a8607589e5ad7f9398816f540fe
         with:
           repo: pyca/infra
           workflow: build-windows-openssl.yml
@@ -497,7 +497,7 @@ jobs:
     name: "Downstream tests for ${{ matrix.DOWNSTREAM }}"
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -508,7 +508,7 @@ jobs:
         uses: ./.github/actions/cache
         timeout-minutes: 2
       - name: Setup python
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: ${{ matrix.PYTHON }}
       - run: ./.github/downstream.d/${{ matrix.DOWNSTREAM }}.sh install
@@ -540,7 +540,7 @@ jobs:
     needs: [linux, distros, linux-rust, linux-rust-coverage, macos, windows, linux-downstream]
     if: ${{ always() }}
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.1.7
         timeout-minutes: 3
         with:
           persist-credentials: false
@@ -550,14 +550,14 @@ jobs:
           jobs: ${{ toJSON(needs) }}
       - name: Setup python
         if: ${{ always() }}
-        uses: actions/setup-python@v4.6.0
+        uses: actions/setup-python@v5.2.0
         with:
           python-version: '3.11'
       - run: pip install -c ci-constraints-requirements.txt coverage[toml]
         if: ${{ always() }}
       - name: Download coverage data
         if: ${{ always() }}
-        uses: actions/download-artifact@v3.0.2
+        uses: actions/download-artifact@v4.1.8
         with:
           name: coverage-data
       - name: Combine coverage and fail if it's <100%.
@@ -599,14 +599,14 @@ jobs:
         run: python -m coverage html
         if: ${{ failure() && steps.combinecoverage.outcome == 'failure' }}
       - name: Upload HTML report.
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: _html-report
           path: htmlcov
           if-no-files-found: ignore
         if: ${{ failure() && steps.combinecoverage.outcome == 'failure' }}
       - name: Upload rust HTML report.
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4.4.0
         with:
           name: _html-rust-report
           path: rust-coverage
