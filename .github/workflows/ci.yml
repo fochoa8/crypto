@@ -75,7 +75,7 @@ jobs:
           CONFIG_FLAGS: ${{ matrix.PYTHON.OPENSSL.CONFIG_FLAGS }}
         if: matrix.PYTHON.OPENSSL
       - name: Load OpenSSL cache
-        uses: actions/cache@v4.1.0
+        uses: actions/cache@v4.1.1
         id: ossl-cache
         timeout-minutes: 2
         with:
