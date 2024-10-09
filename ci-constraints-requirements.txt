@@ -62,7 +62,7 @@ keyring==25.4.1
     # via twine
 markdown-it-py==3.0.0
     # via rich
-markupsafe==2.1.5
+markupsafe==3.0.1
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
