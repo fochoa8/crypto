@@ -177,7 +177,7 @@ tomli==2.2.1
     #   mypy
     #   pyproject-hooks
     #   pytest
-twine==5.1.1
+twine==6.0.1
     # via cryptography (pyproject.toml)
 typing-extensions==4.12.2
     # via mypy
