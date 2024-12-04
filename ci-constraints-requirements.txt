@@ -140,7 +140,7 @@ rich==13.9.4
     # via twine
 ruff==0.8.1
     # via cryptography (pyproject.toml)
-six==1.16.0
+six==1.17.0
     # via bleach
 snowballstemmer==2.2.0
     # via sphinx
