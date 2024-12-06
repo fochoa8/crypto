@@ -87,7 +87,7 @@ pathspec==0.12.1
     # via
     #   black
     #   check-sdist
-pkginfo==1.11.2
+pkginfo==1.12.0
     # via twine
 platformdirs==4.3.6
     # via
